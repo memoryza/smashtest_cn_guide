@@ -1,17 +1,118 @@
+> 本仓库基于[smashtest](https://github.com/smashtestio/smashtest)学习和翻译，其中增加了学习过程中写了一些例子在 sample下
+
 # Smashtest介绍
 
 > ###### Smashtest是一种快速描述和部署测试用例的语言。
 
 它以树形结构写测试用例，极大的加速你的自动化测试用例速度;树代表我们在测试时的想法。它们允许我们列出从任何给定点分支的所有排列。
 
+* 多浏览器和设备支持
+* 支持UI和API测试
+* 并行运行测试用例
+* 步骤可读性强
+* 友好的在线文档
+* 支持本地运行和集成至CI/CD
+
+### 例子
+
+```
+Open Chrome
+Open Firefox
+Open Safari
+
+    Navigate to 'site.com'
+
+        Click 'Sign In'
+
+            Type {username:} into 'username box'
+
+                {username} is 'joe'
+                {username} is 'bob'
+                {username} is 'mary'
+
+                    Verify success
+
+                {username} is 'baduser'
+
+                    Verify error
+```
+
+### 运行情况
+
+```
+Test Case 1                        Test Case 2                        Test Case 3
+-----------                        -----------                        -----------
+Open Chrome                        Open Firefox                       Open Safari
+Navigate to 'site.com'             Navigate to 'site.com'             Navigate to 'site.com'
+Click ['Sign In']                  Click ['Sign In']                  Click ['Sign In']
+Type 'joe' into [username box]     Type 'joe' into [username box]     Type 'joe' into [username box]
+Verify success                     Verify success                     Verify success
+
+
+Test Case 4                        Test Case 5                        Test Case 6
+-----------                        -----------                        -----------
+Open Chrome                        Open Firefox                       Open Safari
+Navigate to 'site.com'             Navigate to 'site.com'             Navigate to 'site.com'
+Click ['Sign In']                  Click ['Sign In']                  Click ['Sign In']
+Type 'bob' into [username box]     Type 'bob' into [username box]     Type 'bob' into [username box]
+Verify success                     Verify success                     Verify success
+
+
+Test Case 7                        Test Case 8                        Test Case 9
+-----------                        -----------                        -----------
+Open Chrome                        Open Firefox                       Open Safari
+Navigate to 'site.com'             Navigate to 'site.com'             Navigate to 'site.com'
+Click ['Sign In']                  Click ['Sign In']                  Click ['Sign In']
+Type 'mary' into [username box]    Type 'mary' into [username box]    Type 'mary' into [username box]
+Verify success                     Verify success                     Verify success
+
+
+Test Case 10                       Test Case 11                       Test Case 12
+------------                       ------------                       ------------
+Open Chrome                        Open Firefox                       Open Safari
+Navigate to 'site.com'             Navigate to 'site.com'             Navigate to 'site.com'
+Click ['Sign In']                  Click ['Sign In']                  Click ['Sign In']
+Type 'baduser' into [username box] Type 'baduser' into [username box] Type 'baduser' into [username box]
+Verify error                       Verify error                       Verify error
+```
+
+### 运行代码
+
+```
+Test Case 1
+-----------
+let driver = await new Builder().forBrowser('chrome').build();
+await driver.get('http://site.com');
+let signInButton = await driver.findElement(By.id('#sign-in'));
+await signInButton.click();
+await driver.wait(until.elementLocated(By.id('#username-box')), 10000);
+let usernameBox = await driver.findElement(By.id('#username-box'));
+await usernameBox.sendKeys('joe');
+await driver.wait(until.elementLocated(By.id('#success-element')), 10000);
+
+
+Test Case 2
+-----------
+let driver = await new Builder().forBrowser('firefox').build();
+await driver.get('http://site.com');
+let signInButton = await driver.findElement(By.id('#sign-in'));
+await signInButton.click();
+await driver.wait(until.elementLocated(By.id('#username-box')), 10000);
+let usernameBox = await driver.findElement(By.id('#username-box'));
+await usernameBox.sendKeys('joe');
+await driver.wait(until.elementLocated(By.id('#success-element')), 10000);
+
+
+etc.
+```
+
+### 安装
+
 ```
         npm i -g smashtest
 ```
 
-本仓库基于[smashtest](https://github.com/smashtestio/smashtest)学习和翻译
-其中增加了学习过程中写了一些例子在 sample下
-
-# 目录
+### 文档
 
 * [介绍](introduce.md)
 * [开始](chapter1-setup.md)
@@ -57,4 +158,16 @@
 * [REPL](repl.md)
 * [安装包](an-zhuang-bao.md)
 * [联系我们](lian-xi-wo-men.md)
+
+### 用法
+
+```
+smashtest [.smash files to run] [options]
+```
+
+```
+smashtest -? 列出帮助选项
+```
+
+
 
