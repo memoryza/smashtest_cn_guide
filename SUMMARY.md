@@ -1,6 +1,6 @@
 # Summary
 
-* [介绍](README.md)
+* [介绍](introduce.md)
 * [开始](chapter1-setup.md)
   * [写第一个用例](chapter1-writecase.md)
   * [调试与学习](chapter1-debugandlearn.md)
