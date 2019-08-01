@@ -9,7 +9,7 @@
 ```
 
 本仓库基于[smashtest](https://github.com/smashtestio/smashtest)学习和翻译
-其中增加了学习过程中写了一些例子在 smaple下
+其中增加了学习过程中写了一些例子在 sample下
 
 # 目录
 
