@@ -1,0 +1,10 @@
+Open Chrome
+
+    nav to 'www.baidu.com'
+
+        {username} = 'superman' // this sets the global variable 'superman'
+        {username} is 'superman' // same as above
+        {username} is "superman" // same as above
+        {username} is [superman] // same as above
+
+            Type '{username}[enter]' into 'input[id=kw]'

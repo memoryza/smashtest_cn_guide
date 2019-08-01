@@ -1,0 +1,10 @@
+open chrome
+    nav to 'baidu.com'
+ 
+        [
+            type 'hello world[enter]' into 'input[id=kw]'
+ 
+            type 'hello world' into 'input[id=kw]'
+                click 'input[id=su]'
+        ]
+ 

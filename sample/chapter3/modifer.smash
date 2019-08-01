@@ -1,0 +1,3 @@
+open chrome ~
+
+    nav to 'www.baidu.com'

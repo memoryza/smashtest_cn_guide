@@ -1,0 +1,22 @@
+open chrome
+
+    nav to 'www.baidu.com/gaoji/advanced.html'
+        check 'input[id=q5_1]'
+            type 'test' into 'input[id=keyword]'
+                clear 'input[id=keyword]'
+                    type '搜索' into 'input[id=keyword]'
+                        set 'input[name=q2]' to '高级搜索功能测试'
+                            select '20' from 'select[name=rn]'
+                                {advancevar} = Value of 'input[name=q2]'
+                                    {BAIDUID} = Get cookie 'BAIDUID'
+                                        cs input value
+                                            click 'input[type=submit]'
+                                                Log 'wait 5s'
+                                                    Wait '5' secs 
+                                                        Go Back
+                                * cs input value {
+                                  c(advancevar);
+                                  c(BAIDUID)
+                                }
+    
+    

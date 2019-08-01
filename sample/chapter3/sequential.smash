@@ -1,0 +1,5 @@
+open chrome ..
+    nav to 'www.google.com'
+    nav to 'www.baidu.com'
+    nav to 'www.taobao.com'
+    nav to 'www.baidu.com'

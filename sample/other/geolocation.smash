@@ -1,0 +1,12 @@
+open chrome
+
+    nav to 'map.baidu.com'
+        Mock location to latitude='43.8084544665' longitude='125.3441601259'
+            click 'div[id=iploc]'
+                click 'div[class="sure-btn sureLoc-btn locbtn"]'
+                    wait '1' secs
+                        click 'div[id=iploc]'
+                            wait '2' secs
+                                stop all mocks
+                                    click 'div[id=iploc]'
+                                        wait '3' secs              

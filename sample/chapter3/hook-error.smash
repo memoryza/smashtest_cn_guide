@@ -1,0 +1,32 @@
+
+open chrome ..
+    nav to 'www.baidu.com'
+        type 'test[enter]' into 'input[id=kw]'
+
+        type 'test1' into 'input[id=kw]'
+            type 'test step' into 'input[id=kw]'
+                click 'input[id=su]'
+
+            *** Before Every Step {
+               c('Before Step')
+            }
+
+            *** After Every Step {
+               c('After Step')
+            }
+        *** Before Every Branch {
+          c('Before Branch')
+        }
+
+        *** After Every Branch {
+          c('After Branch')
+        }
+        
+    nav to 'www.baidu.com'
+        type 'error test[enter]' into 'input[id=kw]'
+        - run error case
+
+        *** After Every Branch {
+          c('After Branch')
+          maybe write error function
+        }
