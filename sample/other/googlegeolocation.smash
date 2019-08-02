@@ -9,13 +9,13 @@ open chrome
                     click 'button[id=widget-mylocation]'
                         wait '3' secs
                             stop all mocks
-                                get current position
+                                Get current position {
+                                    await executeScript(function() {   // exec js in browser
+                                        c(navigator.geolocation.getCurrentPosition);
+                                        navigator.geolocation.getCurrentPosition(function(obj) {
+                                            console.log(obj); 
+                                        });
+                                    });
+                                }
                                     click 'button[id=widget-mylocation]'
                                         wait '3' secs
-                        * get current position {
-                            c(getGlobal('navigator'))
-                        }
-        nav to 'www.google.com/maps'
-            wait '5' secs
-                click 'button[id=widget-mylocation]'
-                    wait '3' secs

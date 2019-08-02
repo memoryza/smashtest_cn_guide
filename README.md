@@ -169,5 +169,7 @@ smashtest [.smash files to run] [options]
 smashtest -? 列出帮助选项
 ```
 
+![Total visitor](https://visitor-count-badge.herokuapp.com/total.svg?repo_id=memoryza.smashtest.cn.guide)
+![Visitors in today](https://visitor-count-badge.herokuapp.com/today.svg?repo_id=memoryza.smashtest.cn.guide)
 
 
