@@ -8,5 +8,6 @@ open chrome
                         click 'div[id=iploc]'
                             wait '2' secs
                                 stop all mocks
-                                    click 'div[id=iploc]'
-                                        wait '3' secs              
+                                    Refresh
+                                        click 'div[id=iploc]'
+                                            wait '3' secs              

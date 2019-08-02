@@ -1,11 +1,21 @@
 
 open chrome
 
-    nav to 'www.google.com/maps'
-        Mock location to latitude='43.8084544665' longitude='125.3441601259'
-            wait '3' secs
+    Desktop
+
+        nav to 'www.google.com/maps'
+            Mock location to latitude='43.8084544665' longitude='125.3441601259'
+                wait '5' secs
+                    click 'button[id=widget-mylocation]'
+                        wait '3' secs
+                            stop all mocks
+                                get current position
+                                    click 'button[id=widget-mylocation]'
+                                        wait '3' secs
+                        * get current position {
+                            c(getGlobal('navigator'))
+                        }
+        nav to 'www.google.com/maps'
+            wait '5' secs
                 click 'button[id=widget-mylocation]'
                     wait '3' secs
-                        stop all mocks
-                            click 'button[id=widget-mylocation]'
-                                wait '3' secs              
