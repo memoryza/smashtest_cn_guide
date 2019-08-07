@@ -173,3 +173,6 @@ smashtest -? 列出帮助选项
 ![Visitors in today](https://visitor-count-badge.herokuapp.com/today.svg?repo_id=memoryza.smashtest.cn.guide)
 
 
+### 用例
+
+用例全部整合到[smashtest-example](https://github.com/memoryza/smashtest-example)
