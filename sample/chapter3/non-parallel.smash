@@ -1,8 +1,0 @@
-open chrome !
-
-    nav to 'www.baidu.com'
-    nav to 'www.taobao.com'
-
-    nav to 'www.baidu.com'
-        type 'test' into 'input[id=kw]'
-            click 'input[id=su]'

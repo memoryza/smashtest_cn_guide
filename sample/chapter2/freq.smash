@@ -1,7 +1,0 @@
-Open Chrome
-    nav to 'baidu.com'
-        type 'test' into 'input[id=kw]' #low
-            Click 'input[id=su]' #med
-        
-        type 'm' into 'input[id=kw]' #high
-            Click 'input[id=su]' #med

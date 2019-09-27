@@ -1,4 +1,0 @@
-open chrome
-    
-    nav to 'www.baidu.com'
-        selector  'input[id=kw]'
